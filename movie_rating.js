@@ -9,6 +9,16 @@ if (Meteor.isClient) {
     return Movies.find();
   };
 
+  Template.movie.events({
+    'click input.rate': function (event) {
+      var score = $(event.currentTarget).parent().find(".ratingScore").val();
+      if (score !== "none") {
+        score = parseInt(score);
+        Movies.update(this._id, {$inc: {sumOfRatings: score, ratingCount: 1}});
+      }
+    }
+  });
+
 /*
   Template.hello.events({
     'click input' : function () {

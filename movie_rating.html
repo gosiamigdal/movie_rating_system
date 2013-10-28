@@ -16,6 +16,16 @@
 </template>
 
 <template name="movie">
-    <li>{{name}}</li>
+    <li>{{name}}, score: {{sumOfRatings}}
+        <select class="ratingScore">
+            <option value="none">Select</option>
+            <option value="1">1 (worst)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (best)</option>
+        </select>
+        <input type="button" class="rate" value="Rate" />
+    </li>
 
 </template>
