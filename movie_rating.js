@@ -9,6 +9,15 @@ if (Meteor.isClient) {
     return Movies.find();
   };
 
+  Template.movie.average = function () {
+    if (this.ratingCount === 0) {
+      return "N/A";
+    } else {
+      var avg = this.sumOfRatings / this.ratingCount;
+      return Math.round(avg * 10) / 10;
+    }
+  }
+
   Template.movie.events({
     'click input.rate': function (event) {
       var score = $(event.currentTarget).parent().find(".ratingScore").val();
