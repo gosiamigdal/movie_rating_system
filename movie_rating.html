@@ -1,0 +1,21 @@
+<head>
+  <title>Movie ratings by Gosia &amp; Jacek</title>
+</head>
+
+<body>
+    <h1>Movie ratings by Gosia &amp; Jacek.</h1>
+    {{> movies}}
+</body>
+
+<template name="movies">
+    <ul>
+        {{#each movies}}
+            {{> movie}}
+        {{/each}}
+    </ul>
+</template>
+
+<template name="movie">
+    <li>{{name}}</li>
+
+</template>
